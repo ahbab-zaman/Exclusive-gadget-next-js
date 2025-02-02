@@ -6,7 +6,7 @@ import { BsCart3 } from "react-icons/bs";
 export default function Navbar() {
   return (
     <>
-      <header className="w-full">
+      <header className="w-full border-b sticky top-0 z-10 bg-white">
         <div className="navbar w-11/12 mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
