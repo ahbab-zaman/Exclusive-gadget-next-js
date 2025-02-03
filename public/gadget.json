@@ -5,6 +5,7 @@
     "description": "6.1-inch Super Retina XDR display, A16 Bionic chip, 48MP main camera.",
     "price": 999.99,
     "category": "Gaming",
+    "category_image" : "https://i.ibb.co.com/MDkQKZR4/Category-Gamepad.png",
     "in_stock": true
   },
   {
@@ -13,6 +14,7 @@
     "description": "6.8-inch AMOLED display, Snapdragon 8 Gen 2, 200MP main camera.",
     "price": 1199.99,
     "category": "Computer",
+    "category_image" : "https://i.ibb.co.com/dsZpwHPy/Category-Computer.png",
     "in_stock": true
   },
   {
@@ -21,6 +23,7 @@
     "description": "Industry-leading noise canceling, 30-hour battery life, premium sound.",
     "price": 399.99,
     "category": "Computer",
+    "category_image" : "https://i.ibb.co.com/dsZpwHPy/Category-Computer.png",
     "in_stock": true
   },
   {
@@ -29,6 +32,7 @@
     "description": "M2 Pro chip, 16GB RAM, 512GB SSD, Liquid Retina XDR display.",
     "price": 2499.99,
     "category": "Headphone",
+    "category_image" : "https://i.ibb.co.com/gMB3KXn9/Category-Headphone.png",
     "in_stock": false
   },
   {
@@ -37,6 +41,7 @@
     "description": "14.6-inch AMOLED display, Snapdragon 8 Gen 1, S Pen included.",
     "price": 1099.99,
     "category": "Camera",
+    "category_image" : "https://i.ibb.co.com/B5J3Vgz9/Category-Camera-1.png",
     "in_stock": true
   },
   {
@@ -45,6 +50,7 @@
     "description": "M2 chip, 12.9-inch Liquid Retina XDR display, Apple Pencil support.",
     "price": 1299.99,
     "category": "Computer",
+    "category_image" : "https://i.ibb.co.com/dsZpwHPy/Category-Computer.png",
     "in_stock": true
   },
   {
@@ -53,6 +59,7 @@
     "description": "6.7-inch OLED display, Google Tensor G2 chip, 50MP camera.",
     "price": 899.99,
     "category": "Gaming",
+    "category_image" : "https://i.ibb.co.com/MDkQKZR4/Category-Gamepad.png",
     "in_stock": false
   },
   {
@@ -60,7 +67,8 @@
     "item_image": "https://i.ibb.co.com/6JFJXnTc/home8-p1.webp",
     "description": "4K HDR video, 34-minute flight time, obstacle avoidance system.",
     "price": 759.99,
-    "category": "Drone",
+    "category": "Camera",
+    "category_image" : "https://i.ibb.co.com/B5J3Vgz9/Category-Camera-1.png",
     "in_stock": true
   },
   {
@@ -69,6 +77,7 @@
     "description": "Always-on Retina display, ECG app, fitness tracking.",
     "price": 499.99,
     "category": "Smartwatch",
+    "category_image" : "https://i.ibb.co.com/dRYTTRH/Category-Smart-Watch.png",
     "in_stock": true
   },
   {
@@ -77,6 +86,7 @@
     "description": "Super AMOLED display, BioActive sensor, Wear OS powered.",
     "price": 349.99,
     "category": "Smartwatch",
+    "category_image" : "https://i.ibb.co.com/dRYTTRH/Category-Smart-Watch.png",
     "in_stock": true
   },
   {
@@ -85,6 +95,7 @@
     "description": "Next-gen gaming console with 4K support and ultra-fast SSD.",
     "price": 499.99,
     "category": "Computer",
+    "category_image" : "https://i.ibb.co.com/dsZpwHPy/Category-Computer.png",
     "in_stock": false
   },
   {
@@ -93,6 +104,7 @@
     "description": "Powerful gaming console with 4K gaming and 120Hz refresh rate.",
     "price": 499.99,
     "category": "Headphone",
+    "category_image" : "https://i.ibb.co.com/gMB3KXn9/Category-Headphone.png",
     "in_stock": true
   },
   {
@@ -101,6 +113,7 @@
     "description": "Most powerful GPU with ray tracing, 24GB GDDR6X memory.",
     "price": 1599.99,
     "category": "Computer",
+    "category_image" : "https://i.ibb.co.com/dsZpwHPy/Category-Computer.png",
     "in_stock": true
   },
   {
@@ -109,6 +122,7 @@
     "description": "Ultra-lightweight ergonomic gaming mouse, 30K DPI sensor.",
     "price": 149.99,
     "category": "Computer",
+    "category_image" : "https://i.ibb.co.com/dsZpwHPy/Category-Computer.png",
     "in_stock": true
   },
   {
@@ -117,6 +131,7 @@
     "description": "Adjustable mechanical switches, OLED display, RGB lighting.",
     "price": 199.99,
     "category": "Headphone",
+    "category_image" : "https://i.ibb.co.com/gMB3KXn9/Category-Headphone.png",
     "in_stock": true
   },
   {
@@ -125,6 +140,7 @@
     "description": "5.3K60 video, HyperSmooth 5.0, waterproof design.",
     "price": 499.99,
     "category": "Camera",
+    "category_image" : "https://i.ibb.co.com/B5J3Vgz9/Category-Camera-1.png",
     "in_stock": true
   },
   {
@@ -133,6 +149,7 @@
     "description": "Best-in-class noise cancellation, customizable fit.",
     "price": 299.99,
     "category": "Mobile",
+    "category_image" : "https://i.ibb.co.com/cXx77W75/Category-Cell-Phone.png",
     "in_stock": false
   },
   {
@@ -141,6 +158,7 @@
     "description": "Hi-Res Audio, deep bass, 12-hour playtime.",
     "price": 99.99,
     "category": "Mobile",
+    "category_image" : "https://i.ibb.co.com/cXx77W75/Category-Cell-Phone.png",
     "in_stock": true
   },
   {
@@ -149,6 +167,7 @@
     "description": "6.8-inch glare-free display, waterproof, adjustable warm light.",
     "price": 139.99,
     "category": "Smartwatch",
+    "category_image" : "https://i.ibb.co.com/dRYTTRH/Category-Smart-Watch.png",
     "in_stock": true
   }
 ]
