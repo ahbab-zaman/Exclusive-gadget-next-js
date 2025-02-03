@@ -1,0 +1,154 @@
+[
+  {
+    "item_name": "HAVIT-HV Joystick",
+    "item_image": "https://i.ibb.co.com/1GjqK0Rp/Frame-611.png",
+    "description": "6.1-inch Super Retina XDR display, A16 Bionic chip, 48MP main camera.",
+    "price": 999.99,
+    "category": "Gaming",
+    "in_stock": true
+  },
+  {
+    "item_name": "AK-900 RGB Keyboard",
+    "item_image": "https://i.ibb.co.com/1YrXfzqD/Frame-612.png",
+    "description": "6.8-inch AMOLED display, Snapdragon 8 Gen 2, 200MP main camera.",
+    "price": 1199.99,
+    "category": "Computer",
+    "in_stock": true
+  },
+  {
+    "item_name": "Samsung monitor",
+    "item_image": "https://i.ibb.co.com/39qRD6w6/g27cq4-500x500-1.png",
+    "description": "Industry-leading noise canceling, 30-hour battery life, premium sound.",
+    "price": 399.99,
+    "category": "Computer",
+    "in_stock": true
+  },
+  {
+    "item_name": "Jukebox Speaker",
+    "item_image": "https://i.ibb.co.com/p6VBcPDn/Frame-610.png",
+    "description": "M2 Pro chip, 16GB RAM, 512GB SSD, Liquid Retina XDR display.",
+    "price": 2499.99,
+    "category": "Headphone",
+    "in_stock": false
+  },
+  {
+    "item_name": "DSLR Camera",
+    "item_image": "https://i.ibb.co.com/WppJMy00/Frame-604.png",
+    "description": "14.6-inch AMOLED display, Snapdragon 8 Gen 1, S Pen included.",
+    "price": 1099.99,
+    "category": "Camera",
+    "in_stock": true
+  },
+  {
+    "item_name": "Mac-book Pro",
+    "item_image": "https://i.ibb.co.com/Mxx4g30g/ideapad-gaming-3i-01-500x500-1.png",
+    "description": "M2 chip, 12.9-inch Liquid Retina XDR display, Apple Pencil support.",
+    "price": 1299.99,
+    "category": "Computer",
+    "in_stock": true
+  },
+  {
+    "item_name": "GP11 Shooter USB Gamepad",
+    "item_image": "https://i.ibb.co.com/wNhb45fB/Frame-608.png",
+    "description": "6.7-inch OLED display, Google Tensor G2 chip, 50MP camera.",
+    "price": 899.99,
+    "category": "Gaming",
+    "in_stock": false
+  },
+  {
+    "item_name": "DJI Mini 3 Pro Drone",
+    "item_image": "https://i.ibb.co.com/6JFJXnTc/home8-p1.webp",
+    "description": "4K HDR video, 34-minute flight time, obstacle avoidance system.",
+    "price": 759.99,
+    "category": "Drone",
+    "in_stock": true
+  },
+  {
+    "item_name": "Apple Watch Series 9",
+    "item_image": "https://i.ibb.co.com/Kcxw2Q9m/home8-p3.webp",
+    "description": "Always-on Retina display, ECG app, fitness tracking.",
+    "price": 499.99,
+    "category": "Smartwatch",
+    "in_stock": true
+  },
+  {
+    "item_name": "JBL Headphone",
+    "item_image": "https://i.ibb.co.com/Y7tVN9q5/home8-p15.webp",
+    "description": "Super AMOLED display, BioActive sensor, Wear OS powered.",
+    "price": 349.99,
+    "category": "Smartwatch",
+    "in_stock": true
+  },
+  {
+    "item_name": "Pendrive",
+    "item_image": "https://i.ibb.co.com/7xNR0Q5B/home1-pro-5.jpg",
+    "description": "Next-gen gaming console with 4K support and ultra-fast SSD.",
+    "price": 499.99,
+    "category": "Computer",
+    "in_stock": false
+  },
+  {
+    "item_name": "Ear buds",
+    "item_image": "https://i.ibb.co.com/N6h7x6tK/home1-pro-13.jpg",
+    "description": "Powerful gaming console with 4K gaming and 120Hz refresh rate.",
+    "price": 499.99,
+    "category": "Headphone",
+    "in_stock": true
+  },
+  {
+    "item_name": "Vivo Laptop",
+    "item_image": "https://i.ibb.co.com/1GTKWj9J/home1-pro-15.jpg",
+    "description": "Most powerful GPU with ray tracing, 24GB GDDR6X memory.",
+    "price": 1599.99,
+    "category": "Computer",
+    "in_stock": true
+  },
+  {
+    "item_name": "hard Drive",
+    "item_image": "https://i.ibb.co.com/tp2TjQgy/home9-p11.jpg",
+    "description": "Ultra-lightweight ergonomic gaming mouse, 30K DPI sensor.",
+    "price": 149.99,
+    "category": "Computer",
+    "in_stock": true
+  },
+  {
+    "item_name": "Speaker",
+    "item_image": "https://i.ibb.co.com/hF2wv2gV/home9-p8.webp",
+    "description": "Adjustable mechanical switches, OLED display, RGB lighting.",
+    "price": 199.99,
+    "category": "Headphone",
+    "in_stock": true
+  },
+  {
+    "item_name": "MIVI-2 Blutooth",
+    "item_image": "https://i.ibb.co.com/FkDWpxQq/1-4ea41212-60ac-430f-9e78-f7aac1088ca3-300x300.jpg",
+    "description": "5.3K60 video, HyperSmooth 5.0, waterproof design.",
+    "price": 499.99,
+    "category": "Camera",
+    "in_stock": true
+  },
+  {
+    "item_name": "i-phone 13 pro max",
+    "item_image": "https://i.ibb.co.com/vCyDNbnL/xproduct-img-25-png-pagespeed-ic-pl-DX2qhsz-I.webp",
+    "description": "Best-in-class noise cancellation, customizable fit.",
+    "price": 299.99,
+    "category": "Mobile",
+    "in_stock": false
+  },
+  {
+    "item_name": "i-phone 11 pro",
+    "item_image": "https://i.ibb.co.com/xS3M4gGR/xproduct-img-27-png-pagespeed-ic-Hmg-IIt0mf-Z.webp",
+    "description": "Hi-Res Audio, deep bass, 12-hour playtime.",
+    "price": 99.99,
+    "category": "Mobile",
+    "in_stock": true
+  },
+  {
+    "item_name": "Smart watch",
+    "item_image": "https://i.ibb.co.com/sJ2mbVK1/category-1.webp",
+    "description": "6.8-inch glare-free display, waterproof, adjustable warm light.",
+    "price": 139.99,
+    "category": "Smartwatch",
+    "in_stock": true
+  }
+]
