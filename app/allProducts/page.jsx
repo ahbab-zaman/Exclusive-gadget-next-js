@@ -12,7 +12,10 @@ export default async function allProducts() {
         <Utils title="explore all products"></Utils>
 
         <div>
-          <div className="grid grid-cols-4 gap-4 py-6">
+          <div
+            className="grid lg:grid-cols-4 grid-cols-1
+           gap-4 py-6"
+          >
             {data.map((item) => (
               <Slide key={item._id} item={item}></Slide>
             ))}

@@ -13,7 +13,7 @@ export default function special() {
               Enhance Your <br /> Music Experience
             </h2>
             <div className="flex items-center gap-3">
-              <div className="w-20 h-20 bg-white flex flex-col justify-center items-center rounded-full p-2">
+              <div className="lg:w-20 w-14 lg:h-20 h-14 bg-white flex flex-col justify-center items-center rounded-full p-2">
                 <h3 className="font-semibold">19</h3>
                 <p
                   className="text-sm uppercase font-semibold
@@ -22,7 +22,7 @@ export default function special() {
                   Hours
                 </p>
               </div>
-              <div className="w-20 h-20 bg-white flex flex-col justify-center items-center rounded-full">
+              <div className="lg:w-20 w-14 lg:h-20 h-14 bg-white flex flex-col justify-center items-center rounded-full">
                 <h3 className="font-semibold">05</h3>
                 <p
                   className="text-sm uppercase font-semibold
@@ -31,7 +31,7 @@ export default function special() {
                   Days
                 </p>
               </div>
-              <div className="w-20 h-20 bg-white flex flex-col justify-center items-center rounded-full">
+              <div className="lg:w-20 w-14 lg:h-20 h-14 bg-white flex flex-col justify-center items-center rounded-full">
                 <h3 className="font-semibold">22</h3>
                 <p
                   className="text-sm uppercase font-semibold
@@ -40,7 +40,7 @@ export default function special() {
                   minutes
                 </p>
               </div>
-              <div className="w-20 h-20 bg-white flex flex-col justify-center items-center rounded-full">
+              <div className="lg:w-20 w-14 lg:h-20 h-14 bg-white flex flex-col justify-center items-center rounded-full">
                 <h3 className="font-semibold">45</h3>
                 <p
                   className="text-sm uppercase font-semibold

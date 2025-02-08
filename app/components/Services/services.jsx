@@ -6,7 +6,7 @@ export default function services() {
     <>
       <Utils title="our services"></Utils>
       <section className="w-11/12 mx-auto my-8">
-        <div className="flex justify-around items-center">
+        <div className="flex lg:flex-row flex-col justify-around items-center">
           <div
             className="flex flex-col justify-center items-center gap-3
         "

@@ -10,7 +10,7 @@ export default function discountProduct() {
     <>
       <section className="w-11/12 mx-auto my-8">
         <Utils title="our latest products"></Utils>
-        <div className="grid grid-cols-4 gap-4 py-6">
+        <div className="grid lg:grid-cols-4 grid-cols-1 gap-4 py-6">
           {data.map((item) => (
             <Slide key={item._id} item={item}></Slide>
           ))}
