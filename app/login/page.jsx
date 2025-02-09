@@ -1,12 +1,11 @@
 import Image from "next/image";
-import Utils from "../ReuseFuncs/utils";
 import registerImg from "../../public/assets/login.png";
 import "./login.css";
+import Link from "next/link";
 export default function Login() {
   return (
     <>
       <section className="w-11/12 mx-auto my-8">
-        <Utils title="welcome to login page"></Utils>
         <div className="flex justify-between items-center">
           <div className="w-1/2">
             <Image
@@ -38,16 +37,23 @@ export default function Login() {
                   />
                 </div>
                 <div className="flex justify-between items-center">
-                <div className="mb-4 w-full">
-                  <button className="px-4 py-2 rounded-lg bg-[#db4444] text-white font-semibold">
-                    Login
-                  </button>
-                </div>
-                <div className="mb-4 w-full text-end">
-                  <h4 className="text-[#db4444] font-semibold">Forget password?</h4>
-                </div>
+                  <div className="mb-4 w-full">
+                    <button className="px-4 py-2 rounded-lg bg-[#db4444] text-white font-semibold">
+                      Login
+                    </button>
+                  </div>
+                  <div className="mb-4 w-full text-end">
+                    <h4 className="text-[#db4444] font-semibold">
+                      Forget password?
+                    </h4>
+                  </div>
                 </div>
               </form>
+            </div>
+            <div className="w-3/5 text-center">
+              <p className="text-[#db4444] font-semibold">
+                New to this account? <Link href="/register">Register</Link>
+              </p>
             </div>
           </div>
         </div>
