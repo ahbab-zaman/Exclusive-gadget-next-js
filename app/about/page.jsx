@@ -12,7 +12,7 @@ export default function About() {
     <>
       <section className="w-11/12 mx-auto my-8">
         <div className="flex lg:flex-row flex-col justify-between items-center gap-4">
-          <div className="w-1/2">
+          <div className="lg:w-1/2 w-full">
             <h3 className="text-5xl font-semibold mb-4">Our Stroy</h3>
             <p className="mb-4 text-gray-500">
               Launched in 2015, Exclusive is South Asia’s premier online
@@ -27,7 +27,7 @@ export default function About() {
               ranging from consumer.
             </p>
           </div>
-          <div className="w-1/2">
+          <div className="lg:w-1/2 w-full">
             <Image
               src={aboutImg}
               width={600}

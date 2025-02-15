@@ -1,8 +1,9 @@
 import { Eye, Heart, ShoppingCart } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Slide({ item }) {
-  const { item_name, item_image, price } = item;
+  const { item_name, item_image, price, _id } = item;
   return (
     <div className="space-y-3">
       <figure className="bg-[#F5F5F5] p-4 relative group ">
@@ -23,9 +24,12 @@ export default function Slide({ item }) {
           <button className="bg-white p-2 rounded-full shadow-md hover:bg-gray-200">
             <ShoppingCart className="w-5 h-5 text-blue-500" />
           </button>
-          <button className="bg-white p-2 rounded-full shadow-md hover:bg-gray-200">
+          <Link
+            href={`/details/${_id}`}
+            className="bg-white p-2 rounded-full shadow-md hover:bg-gray-200"
+          >
             <Eye className="w-5 h-5 text-green-500" />
-          </button>
+          </Link>
         </div>
       </figure>
       <h3 className="text-xl font-semibold">{item_name}</h3>

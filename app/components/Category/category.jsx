@@ -7,17 +7,17 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { dbConnect } from "@/lib/dbConnect";
+import { collectionNameObj, dbConnect } from "@/lib/dbConnect";
 import Image from "next/image";
 export default async function Category() {
-  const gadgetCollection = await dbConnect("allGadgets");
+  const gadgetCollection = await dbConnect(collectionNameObj.gadgetsCollection);
   const data = await gadgetCollection.find().toArray();
   console.log(data);
   const Game = data.filter((item) => item.category === "Gaming");
   return (
     <>
       <section className="w-11/12 mx-auto my-8">
-        <div className="mb-8">
+        <div className="mb-10">
           <Utils title="browse by category"></Utils>
         </div>
         <div className="relative">
@@ -29,10 +29,7 @@ export default async function Category() {
           >
             <CarouselContent>
               {data.map((item, index) => (
-                <CarouselItem
-                  key={index}
-                  className="md:basis-1/2 lg:basis-1/4"
-                >
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
                   <div className="p-1">
                     <Card>
                       <CardContent className="flex aspect-square items-center justify-center p-6">
@@ -41,7 +38,8 @@ export default async function Category() {
                             <Image
                               src={item.category_image}
                               alt="Category_image"
-                              width={56} height={56}
+                              width={56}
+                              height={56}
                             />
                           </figure>
                           {item.category}
@@ -52,8 +50,8 @@ export default async function Category() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="absolute -top-6 right-0 left-[88%] transform -translate-y-1/2 bg-[#F5F5F5] hover:bg-[#8986867a] hover:transition-colors hover:duration-300 border-none" />
-            <CarouselNext className="absolute -top-6 right-12 transform -translate-y-1/2 bg-[#F5F5F5] hover:bg-[#8986867a] hover:transition-colors hover:duration-300 border-none" />
+            <CarouselPrevious className="absolute -top-6  right-0 lg:left-[88%] left-[70%] transform -translate-y-1/2 bg-[#F5F5F5] hover:bg-[#8986867a] hover:transition-colors hover:duration-300 border-none" />
+            <CarouselNext className="absolute -top-6 lg:right-12 right-0 transform -translate-y-1/2 bg-[#F5F5F5] hover:bg-[#8986867a] hover:transition-colors hover:duration-300 border-none" />
           </Carousel>
         </div>
       </section>

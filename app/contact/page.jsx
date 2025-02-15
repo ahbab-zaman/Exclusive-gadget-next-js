@@ -5,8 +5,8 @@ export default function Contact() {
   return (
     <>
       <section className="w-11/12 mx-auto my-8">
-        <div className="flex justify-between gap-4 text-gray-500">
-          <div className="w-[30%] shadow-xl p-6">
+        <div className="flex lg:flex-row flex-col justify-between gap-4 text-gray-500">
+          <div className="lg:w-[30%] w-full mx-auto shadow-xl p-10 rounded-xl">
             <div className="space-y-3">
               <h2 className="flex items-center gap-2">
                 <span className="bg-[#DB4444] text-white p-1 rounded-full">
@@ -38,7 +38,17 @@ export default function Contact() {
               </p>
             </div>
           </div>
-          <div className="w-[70%]"></div>
+          <div className="lg:w-[70%] w-full mx-auto shadow-xl lg:p-10 p-6 rounded-xl">
+            <div className="flex lg:flex-row flex-col gap-3">
+              <input className="bg-[#F5F5F5] border-none p-3" type="text" placeholder="Your Name" />
+              <input className="bg-[#F5F5F5] border-none p-3" type="text" placeholder="Your Email" />
+              <input className="bg-[#F5F5F5] border-none p-3" type="text" placeholder="Your phone" />
+            </div>
+            <textarea className="h-[200px] w-full mt-2 border-none bg-[#F5F5F5] resize-none p-4" placeholder="Your Message"></textarea>
+            <div className="flex lg:justify-end justify-center">
+              <button className="bg-[#DB4444] px-4 py-2 text-white">Send Message</button>
+            </div>
+          </div>
         </div>
       </section>
     </>
