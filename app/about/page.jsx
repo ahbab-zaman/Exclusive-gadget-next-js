@@ -5,8 +5,6 @@ import about2 from "../../public/assets/about-2.png";
 import about3 from "../../public/assets/about-3.png";
 import about4 from "../../public/assets/about-4.png";
 import man1 from "../../public/assets/man1.png";
-import man2 from "../../public/assets/man2.png";
-import man3 from "../../public/assets/man3.png";
 export default function About() {
   return (
     <>
@@ -87,7 +85,13 @@ export default function About() {
         <div className="flex lg:flex-row flex-col justify-between my-12">
           <div>
             <figure className="bg-[#f5f5f5] w-[300px] h-[280px] px-8 mb-2">
-              <Image className="mx-auto" src={man1} width={170} height={220}alt="employee"></Image>
+              <Image
+                className="mx-auto"
+                src={man1}
+                width={170}
+                height={220}
+                alt="employee"
+              ></Image>
             </figure>
             <h1 className="text-xl font-semibold mb-2">Ahbab Zaman</h1>
             <p className="text-xs font-semibold">CEO & Chairman</p>
@@ -95,7 +99,13 @@ export default function About() {
 
           <div>
             <figure className="bg-[#f5f5f5] w-[300px] h-[280px] px-8 mb-2">
-              <Image className="mx-auto object-fit" src={man1} width={170} height={220} alt="employee"></Image>
+              <Image
+                className="mx-auto object-fit"
+                src={man1}
+                width={170}
+                height={220}
+                alt="employee"
+              ></Image>
             </figure>
             <h1 className="text-xl font-semibold mb-2">John Wick</h1>
             <p className="text-xs font-semibold">Managing Director</p>
@@ -103,7 +113,13 @@ export default function About() {
 
           <div>
             <figure className="bg-[#f5f5f5] w-[300px] h-[280px] px-8 mb-2">
-              <Image className="mx-auto" src={man1} width={170} height={220} alt="employee"></Image>
+              <Image
+                className="mx-auto"
+                src={man1}
+                width={170}
+                height={220}
+                alt="employee"
+              ></Image>
             </figure>
             <h1 className="text-xl font-semibold mb-2">James Bond</h1>
             <p className="text-xs font-semibold">CEO & Chairman</p>

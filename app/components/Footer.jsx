@@ -3,13 +3,23 @@ import { CiTwitter } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { CiLinkedin } from "react-icons/ci";
 import Link from "next/link";
+import Image from "next/image";
+import footerLogo from "../../public/assets/footerIcon.png";
 
 export default function Footer() {
   return (
     <div>
       <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
         <nav>
-          <h6 className="footer-title">Exclusive</h6>
+          <h6 className="footer-title flex items-end gap-2 font-extrabold">
+            <Image
+              src={footerLogo}
+              width={40}
+              height={40}
+              alt="Footer logo"
+            ></Image>{" "}
+            Exclusive
+          </h6>
           <a className="link link-hover">Subscribe</a>
           <p>Get 10% off your first order</p>
           <div className="flex items-center">

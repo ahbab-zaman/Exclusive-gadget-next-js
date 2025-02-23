@@ -1,11 +1,11 @@
 "use client";
-import Link from "next/link";
 import { FaRegHeart } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import userImg from "../../public/assets/user.png";
+import logo from "../../public/assets/gameIcon.png";
 import Active from "@/components/Active";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,7 +51,8 @@ export default function Navbar() {
                 </li>
               </ul>
             </div>
-            <a className="lg:text-xl text-lg font-semibold uppercase">
+            <a className="lg:text-xl text-lg font-extrabold uppercase flex items-end gap-2">
+              <Image src={logo} width={40} height={40} alt="Gadget Icon"></Image>
               Exclusive
             </a>
           </div>
