@@ -4,7 +4,6 @@ import googleImg from "../../../public/assets/google.png";
 import githubImg from "../../../public/assets/github.png";
 import { registerUser } from "@/app/actions/auth/registerUser";
 import { useRef } from "react";
-import { redirect } from "next/dist/server/api-utils";
 
 export default function RegisterForm() {
   const formRef = useRef();

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import registerImg from "../../public/assets/login.png";
-
 import Image from "next/image";
 import "./register.css";
 import RegisterForm from "./Components/RegisterForm";

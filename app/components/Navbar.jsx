@@ -7,8 +7,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import userImg from "../../public/assets/user.png";
 import logo from "../../public/assets/gameIcon.png";
 import Active from "@/components/Active";
+import { useSession } from "next-auth/react";
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const { data: session, status } = useSession();
+  console.log(session);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <header className="w-full border-b sticky top-0 z-20 bg-white">
@@ -52,7 +55,12 @@ export default function Navbar() {
               </ul>
             </div>
             <a className="lg:text-xl text-lg font-extrabold uppercase flex items-end gap-2">
-              <Image src={logo} width={40} height={40} alt="Gadget Icon"></Image>
+              <Image
+                src={logo}
+                width={40}
+                height={40}
+                alt="Gadget Icon"
+              ></Image>
               Exclusive
             </a>
           </div>
@@ -77,21 +85,35 @@ export default function Navbar() {
             <div className="relative">
               {/* Dropdown Trigger (Image) */}
               <button
-                onClick={() => setOpen(!open)}
+                onClick={() => setIsOpen((prev) => !prev)}
                 className="flex items-center space-x-2"
               >
-                <Image
-                  src={userImg}
-                  alt="user profile"
-                  width={30}
-                  height={30}
-                  className="rounded-full cursor-pointer"
-                />
+                {status == "authenticated" ? (
+                  <>
+                    <Image
+                      src={session?.photo}
+                      alt="User image"
+                      width={30}
+                      height={40}
+                      className="rounded-full cursor-pointer"
+                    ></Image>
+                  </>
+                ) : (
+                  <>
+                    <Image
+                      src={userImg}
+                      alt="user profile"
+                      width={30}
+                      height={30}
+                      className="rounded-full cursor-pointer"
+                    />
+                  </>
+                )}
               </button>
 
               {/* Smooth Dropdown Content */}
               <AnimatePresence>
-                {open && (
+                {isOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -100,22 +122,46 @@ export default function Navbar() {
                     className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border"
                   >
                     <ul className="p-4 space-y-3 text-center w-full">
-                      <li className="px-4 py-2 w-full">
-                        <Active
-                          href="/login"
-                          className="block text-gray-700 hover:bg-gray-100 w-full"
-                        >
-                          Login
-                        </Active>
-                      </li>
-                      <li className="px-4 py-2">
-                        <Active
-                          href="/register"
-                          className="block text-gray-700 hover:bg-gray-100"
-                        >
-                          Register
-                        </Active>
-                      </li>
+                      {status == "authenticated" ? (
+                        <>
+                          <li
+                            onClick={() => setIsOpen(false)}
+                            className="px-4 py-2 w-full  font-semibold hover:bg-[#f1f1f1] transition-all duration-300"
+                          >
+                            <Active
+                              href="/login"
+                              className="block text-gray-700 hover:bg-gray-100 w-full"
+                            >
+                              Logout
+                            </Active>
+                          </li>
+                        </>
+                      ) : (
+                        <>
+                          <li
+                            onClick={() => setIsOpen(false)}
+                            className="px-4 py-2 w-full font-semibold hover:bg-[#f1f1f1] transition-all duration-300"
+                          >
+                            <Active
+                              href="/login"
+                              className="block text-gray-700 hover:bg-gray-100 w-full"
+                            >
+                              Login
+                            </Active>
+                          </li>
+                          <li
+                            onClick={() => setIsOpen(false)}
+                            className="px-4 py-2 font-semibold hover:bg-[#f1f1f1] transition-all duration-300"
+                          >
+                            <Active
+                              href="/register"
+                              className="block text-gray-700 hover:bg-gray-100"
+                            >
+                              Register
+                            </Active>
+                          </li>
+                        </>
+                      )}
                     </ul>
                   </motion.div>
                 )}

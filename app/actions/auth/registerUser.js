@@ -4,15 +4,15 @@ import { collectionNameObj, dbConnect } from "@/lib/dbConnect";
 
 export const registerUser = async (payload) => {
   const userCollection = await dbConnect(collectionNameObj.userCollection);
-  const { email, password } = payload;
-  if (!email || !password) return { success: false };
+  const { email, password, photo } = payload;
+  if (!email || !password) return null;
   const user = await userCollection.findOne({ email: payload.email });
   if (!user) {
     const hashedPassword = await bcrypt.hash(password, 10);
     payload.password = hashedPassword;
     const result = await userCollection.insertOne(payload);
-    const { acknowledged, insertedId } = result;
-    return { acknowledged, insertedId };
+    result.insertedId = result.insertedId.toString();
+    return result;
   }
-  return { success: false };
+  return null;
 };
