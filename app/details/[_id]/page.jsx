@@ -1,17 +1,14 @@
-import { collectionNameObj, dbConnect } from "@/lib/dbConnect";
 import { Heart } from "lucide-react";
-import { ObjectId } from "mongodb";
 import Image from "next/image";
 import React from "react";
 import returnImage from "../../../public/assets/return.png";
 import deliveryImage from "../../../public/assets/delivery.png";
+import Link from "next/link";
 
 export default async function viewDetails({ params }) {
   const g = await params;
-  const gadgetsCollection = await dbConnect(
-    collectionNameObj.gadgetsCollection
-  );
-  const data = await gadgetsCollection.findOne({ _id: new ObjectId(g._id) });
+  const res = await fetch(`http://localhost:3000/api/gadget/${g._id}`);
+  const data = await res.json();
   console.log(data);
   return (
     <>
@@ -32,9 +29,11 @@ export default async function viewDetails({ params }) {
           <p className="text-lg ">${data?.price}</p>
           <p className="font-semibold">{data?.description}</p>
           <div className="flex items-center gap-2">
-            <button className="px-4 py-2 border hover:bg-[#DB4444] hover:text-white transition-all duration-300 font-semibold rounded-xl">
-              Buy Now
-            </button>
+            <Link href={`/checkout/${data._id}`}>
+              <button className="px-4 py-2 border hover:bg-[#DB4444] hover:text-white transition-all duration-300 font-semibold rounded-xl">
+                Buy Now
+              </button>
+            </Link>
             <button className="border rounded-xl hover:bg-[#DB4444] hover:text-white transition-all duration-300 p-2">
               <Heart />
             </button>
