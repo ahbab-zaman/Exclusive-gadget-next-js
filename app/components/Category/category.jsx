@@ -12,7 +12,6 @@ import Image from "next/image";
 export default async function Category() {
   const gadgetCollection = await dbConnect(collectionNameObj.gadgetsCollection);
   const data = await gadgetCollection.find().toArray();
-  console.log(data);
   const Game = data.filter((item) => item.category === "Gaming");
   return (
     <>

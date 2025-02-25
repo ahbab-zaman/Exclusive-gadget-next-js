@@ -3,7 +3,6 @@ import registerImg from "../../public/assets/login.png";
 import "./login.css";
 import Link from "next/link";
 import LoginForm from "./Components/LoginForm";
-import SocialLogin from "./Components/SocialLogin";
 export default function Login() {
   return (
     <>
@@ -26,9 +25,6 @@ export default function Login() {
               <p className="text-[#db4444] font-semibold">
                 New to this account? <Link href="/register">Register</Link>
               </p>
-            </div>
-            <div className="mt-4 w-3/5 text-center">
-              <SocialLogin></SocialLogin>
             </div>
           </div>
         </div>

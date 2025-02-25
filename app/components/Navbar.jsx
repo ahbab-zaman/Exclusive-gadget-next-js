@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import userImg from "../../public/assets/user.png";
 import logo from "../../public/assets/gameIcon.png";
 import Active from "@/components/Active";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 export default function Navbar() {
   const { data: session, status } = useSession();
   console.log(session);
@@ -91,7 +91,7 @@ export default function Navbar() {
                 {status == "authenticated" ? (
                   <>
                     <Image
-                      src={session?.photo}
+                      src={session?.user?.image}
                       alt="User image"
                       width={30}
                       height={40}
@@ -125,7 +125,7 @@ export default function Navbar() {
                       {status == "authenticated" ? (
                         <>
                           <li
-                            onClick={() => setIsOpen(false)}
+                            onClick={() => signOut()}
                             className="px-4 py-2 w-full  font-semibold hover:bg-[#f1f1f1] transition-all duration-300"
                           >
                             <Active

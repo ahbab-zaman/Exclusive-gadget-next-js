@@ -1,9 +1,7 @@
 "use client";
-import Image from "next/image";
-import googleImg from "../../../public/assets/google.png";
-import githubImg from "../../../public/assets/github.png";
 import { registerUser } from "@/app/actions/auth/registerUser";
 import { useRef } from "react";
+import SocialLogin from "@/app/login/Components/SocialLogin";
 
 export default function RegisterForm() {
   const formRef = useRef();
@@ -61,26 +59,10 @@ export default function RegisterForm() {
             Register
           </button>
         </div>
-
-        <div className="mb-4 w-full flex justify-center items-center gap-12">
-          <figure className="border border-gray-400 p-2 rounded-full">
-            <Image
-              src={googleImg}
-              width={30}
-              height={30}
-              alt="google icon"
-            ></Image>
-          </figure>
-          <figure className="border border-gray-400 p-2 rounded-full">
-            <Image
-              src={githubImg}
-              width={30}
-              height={30}
-              alt="google icon"
-            ></Image>
-          </figure>
-        </div>
       </form>
+      <div className="mt-4 text-center">
+        <SocialLogin></SocialLogin>
+      </div>
     </>
   );
 }
