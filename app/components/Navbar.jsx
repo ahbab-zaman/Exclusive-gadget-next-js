@@ -1,6 +1,5 @@
 "use client";
 import { FaRegHeart } from "react-icons/fa";
-import { BsCart3 } from "react-icons/bs";
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -80,8 +79,7 @@ export default function Navbar() {
           </div>
 
           <div className="navbar-end lg:ml-0 ml-8 gap-4 lg:justify-end">
-            <FaRegHeart></FaRegHeart>
-            <BsCart3></BsCart3>
+            <FaRegHeart></FaRegHeart>{" "}
             <div className="relative">
               {/* Dropdown Trigger (Image) */}
               <button

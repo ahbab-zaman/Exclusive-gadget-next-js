@@ -12,8 +12,8 @@ export default async function viewDetails({ params }) {
   console.log(data);
   return (
     <>
-      <section className="w-11/12 mx-auto p-12 flex lg:flex-row flex-col justify-between gap-6">
-        <figure className="bg-base-200 p-10 rounded-xl w-1/2 mx-auto flex justify-center items-center">
+      <section className="w-11/12 mx-auto lg:p-12 p-2 flex lg:flex-row flex-col justify-between gap-6">
+        <figure className="bg-base-200 lg:p-10 p-2 rounded-xl lg:w-1/2 w-full mx-auto flex justify-center items-center">
           <Image
             src={data?.item_image}
             width={300}
@@ -21,7 +21,7 @@ export default async function viewDetails({ params }) {
             alt="Gadgets"
           ></Image>
         </figure>
-        <div className="text-left w-1/2 space-y-4">
+        <div className="text-left lg:w-1/2 w-full space-y-4">
           <h2 className="text-xl font-semibold">{data?.item_name}</h2>
           <p className="text-green-500 font-semibold">
             {data?.in_stock ? "In Stock" : "Out of Stock"}

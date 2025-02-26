@@ -46,12 +46,12 @@ const CheckoutForm = ({ data }) => {
   return (
     <div className="my-10">
       <div className="w-11/12 mx-auto">
-        <h2 className="text-center text-3xl mb-4">
-          Book Service : {data?.title}
-        </h2>
         <section className="flex lg:flex-row flex-col items-center">
-          <form onSubmit={handleBookService} className="w-full flex gap-4">
-            <div className="w-1/2">
+          <form
+            onSubmit={handleBookService}
+            className="w-full flex lg:flex-row flex-col gap-4"
+          >
+            <div className="lg:w-1/2 w-full">
               <div className="flex flex-col gap-1 w-full mb-4">
                 <label>Name</label>
                 <input
@@ -121,7 +121,8 @@ const CheckoutForm = ({ data }) => {
                 />
               </div>
             </div>
-            <div className="w-1/2 ">
+
+            <div className="lg:w-1/2 w-full">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-5">
                   <figure>
