@@ -1,15 +1,17 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import toast from "react-hot-toast";
 import SocialLogin from "./SocialLogin";
 export default function LoginForm() {
   const router = useRouter();
   const formRef = useRef();
+  const [loading, setLoading] = useState(false);
   const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -24,6 +26,7 @@ export default function LoginForm() {
         router.push("/");
         toast.success("User Login Successful");
         formRef.current.reset();
+        setLoading(false);
       } else {
         toast.error("Authentication Failed");
       }
@@ -53,8 +56,19 @@ export default function LoginForm() {
         </div>
         <div className="flex justify-between items-center">
           <div className="mb-4 w-full">
-            <button className="px-4 py-2 rounded-lg bg-[#db4444] text-white font-semibold">
-              Login
+            <button
+              type="submit"
+              className="px-4 py-2 bg-[#DB4444] text-white font-semibold w-full flex items-center justify-center gap-2 hover:bg-[#f1f1f1] hover:text-[#DB4444] duration-300 transition-all"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                  Please wait...
+                </>
+              ) : (
+                "Login"
+              )}
             </button>
           </div>
           <div className="mb-4 w-full text-end">

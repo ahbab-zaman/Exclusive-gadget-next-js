@@ -1,19 +1,24 @@
 "use client";
 import { registerUser } from "@/app/actions/auth/registerUser";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import SocialLogin from "@/app/login/Components/SocialLogin";
+import { redirect } from "next/dist/server/api-utils";
 
 export default function RegisterForm() {
   const formRef = useRef();
+  const [loading, setLoading] = useState(false);
   const handleRegister = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
+    console.log({ name, email, password, photo });
     await registerUser({ name, email, password, photo });
     formRef.current.reset();
+    setLoading(false);
   };
   return (
     <>
@@ -55,8 +60,19 @@ export default function RegisterForm() {
         </div>
 
         <div className="mb-4 w-full">
-          <button className="px-4 py-2 rounded-lg bg-[#db4444] text-white font-semibold w-full">
-            Register
+          <button
+            type="submit"
+            className="px-4 py-2 bg-[#DB4444] text-white font-semibold w-full flex items-center justify-center gap-2 hover:bg-[#f1f1f1] hover:text-[#DB4444] duration-300 transition-all"
+            disabled={loading}
+          >
+            {loading ? (
+              <>
+                <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                Please wait...
+              </>
+            ) : (
+              "Register"
+            )}
           </button>
         </div>
       </form>

@@ -1,8 +1,10 @@
-import { FadeLoader } from "react-spinners";
+"use client";
+import Spinner from "./components/Spinner/Spinner";
+
 export default function loading() {
   return (
-    <div className="w-full min-h-screen flex justify-center items-center">
-      <FadeLoader loading={true} />
+    <div>
+      <Spinner></Spinner>
     </div>
   );
 }

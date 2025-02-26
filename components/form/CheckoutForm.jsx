@@ -2,17 +2,18 @@
 
 import { useSession } from "next-auth/react";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
 import toast from "react-hot-toast";
 
 const CheckoutForm = ({ data }) => {
   const { data: session } = useSession();
   console.log(session);
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef();
 
   const handleBookService = async (e) => {
-    toast("Submitting Booking...");
     e.preventDefault();
-
+    setLoading(true);
     const form = e.target;
     const name = form.name.value;
     const date = form.date.value;
@@ -21,26 +22,29 @@ const CheckoutForm = ({ data }) => {
     const email = form.email.value;
     const bookingPayload = {
       // Session
-      customerName: name,
-      email,
+      customerName: session?.user?.name,
+      email: session?.user?.email,
       // User Inputs
       date,
       phone,
       address,
       // Extra information
-      service_id: data._id,
-      service_name: data.title,
-      service_img: data.img,
-      service_price: data.price,
+      gadget_id: data._id,
+      gadget_name: data.item_name,
+      gadget_img: data.item_image,
+      gadget_category: data.category_image,
+      gadget_price: data.price,
     };
-
-    console.log(bookingPayload);
     const res = await fetch("http://localhost:3000/api/gadget", {
       method: "POST",
       body: JSON.stringify(bookingPayload),
     });
     const postedResponse = await res.json();
-    console.log("POSTED DATA", postedResponse);
+    if (postedResponse.insertedId) {
+      toast.success("Order Successfully Done");
+      setLoading(false);
+      formRef.current.reset();
+    }
   };
 
   return (
@@ -48,6 +52,7 @@ const CheckoutForm = ({ data }) => {
       <div className="w-11/12 mx-auto">
         <section className="flex lg:flex-row flex-col items-center">
           <form
+            ref={formRef}
             onSubmit={handleBookService}
             className="w-full flex lg:flex-row flex-col gap-4"
           >
@@ -80,8 +85,6 @@ const CheckoutForm = ({ data }) => {
                 <label>Phone</label>
                 <input
                   name="phone"
-                  defaultValue={session?.user?.phone}
-                  readOnly
                   className="p-2 px-4 border-none bg-[#f1f1f1] focus:outline-none rounded-md"
                   type="text"
                   placeholder="Enter Your Contact No."
@@ -157,10 +160,20 @@ const CheckoutForm = ({ data }) => {
                   <p className="text-lg font-semibold">FREE</p>
                 </div>
               </div>
-
               <div className="flex items-center justify-between">
-                <button className="px-4 py-2 bg-[#DB4444] text-white font-semibold w-full">
-                  Place Order
+                <button
+                  type="submit"
+                  className="px-4 py-2 bg-[#DB4444] text-white font-semibold w-full flex items-center justify-center gap-2 hover:bg-[#f1f1f1] hover:text-[#DB4444] duration-300 transition-all"
+                  disabled={loading}
+                >
+                  {loading ? (
+                    <>
+                      <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                      Please wait...
+                    </>
+                  ) : (
+                    "Place Order"
+                  )}
                 </button>
               </div>
             </div>
