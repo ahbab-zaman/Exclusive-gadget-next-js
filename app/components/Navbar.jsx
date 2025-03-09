@@ -79,7 +79,7 @@ export default function Navbar() {
           </div>
 
           <div className="navbar-end lg:ml-0 ml-8 gap-4 lg:justify-end">
-            <FaRegHeart></FaRegHeart>{" "}
+            <FaRegHeart></FaRegHeart>
             <div className="relative">
               {/* Dropdown Trigger (Image) */}
               <button

@@ -3,6 +3,7 @@ import { registerUser } from "@/app/actions/auth/registerUser";
 import { useRef, useState } from "react";
 import SocialLogin from "@/app/login/Components/SocialLogin";
 import { redirect } from "next/dist/server/api-utils";
+import { useRouter } from "next/router";
 
 export default function RegisterForm() {
   const formRef = useRef();
@@ -15,8 +16,8 @@ export default function RegisterForm() {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
-    console.log({ name, email, password, photo });
     await registerUser({ name, email, password, photo });
+    console.log({ name, email, password, photo });
     formRef.current.reset();
     setLoading(false);
   };
