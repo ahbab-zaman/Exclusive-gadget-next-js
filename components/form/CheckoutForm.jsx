@@ -7,43 +7,55 @@ import toast from "react-hot-toast";
 
 const CheckoutForm = ({ data }) => {
   const { data: session } = useSession();
-  console.log(session);
   const [loading, setLoading] = useState(false);
   const formRef = useRef();
 
   const handleBookService = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     const form = e.target;
     const name = form.name.value;
     const date = form.date.value;
     const phone = form.phone.value;
     const address = form.address.value;
     const email = form.email.value;
+
     const bookingPayload = {
-      // Session
       customerName: session?.user?.name,
       email: session?.user?.email,
-      // User Inputs
       date,
       phone,
       address,
-      // Extra information
       gadget_id: data._id,
       gadget_name: data.item_name,
       gadget_img: data.item_image,
       gadget_category: data.category_image,
       gadget_price: data.price,
     };
-    const res = await fetch("http://localhost:3000/api/gadget", {
-      method: "POST",
-      body: JSON.stringify(bookingPayload),
-    });
-    const postedResponse = await res.json();
-    if (postedResponse.insertedId) {
-      toast.success("Order Successfully Done");
+
+    try {
+      const res = await fetch("http://localhost:3000/api/gadget", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bookingPayload),
+      });
+
+      const postedResponse = await res.json();
+      console.log(postedResponse);
+
+      if (res.ok && postedResponse.insertedId) {
+        toast.success("Order Successfully Done");
+        formRef.current.reset();
+      } else {
+        throw new Error(postedResponse.message || "Something went wrong");
+      }
+    } catch (err) {
+      toast.error(err.message);
+    } finally {
       setLoading(false);
-      formRef.current.reset();
     }
   };
 
@@ -97,7 +109,6 @@ const CheckoutForm = ({ data }) => {
                   name="date"
                   className="p-2 px-4 border-none bg-[#f1f1f1] focus:outline-none rounded-md"
                   type="date"
-                  placeholder=""
                   required
                 />
               </div>
@@ -109,7 +120,6 @@ const CheckoutForm = ({ data }) => {
                   readOnly
                   className="p-2 px-4 border-none bg-[#f1f1f1] focus:outline-none rounded-md"
                   type="text"
-                  placeholder=""
                   required
                 />
               </div>
@@ -129,12 +139,24 @@ const CheckoutForm = ({ data }) => {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-5">
                   <figure>
-                    <Image
+                    {/* <Image
                       src={data?.item_image}
                       width={100}
                       height={100}
-                      alt="Gadget price"
-                    />
+                      alt="Gadget"
+                    /> */}
+                    {data?.item_image ? (
+                      <Image
+                        src={data.item_image}
+                        width={100}
+                        height={100}
+                        alt="Gadget"
+                      />
+                    ) : (
+                      <div className="w-[100px] h-[100px] bg-gray-200 flex items-center justify-center text-sm text-gray-500">
+                        No Image
+                      </div>
+                    )}
                   </figure>
                   <h4 className="text-lg font-semibold">{data?.item_name}</h4>
                 </div>
@@ -144,22 +166,15 @@ const CheckoutForm = ({ data }) => {
               </div>
 
               <div className="flex items-center justify-between border-b-2 mt-8 p-4">
-                <div className="flex items-center gap-5">
-                  <h2 className="text-lg font-semibold">SUBTOTAL</h2>
-                </div>
-                <div>
-                  <p className="text-lg font-semibold">${data?.price}</p>
-                </div>
+                <h2 className="text-lg font-semibold">SUBTOTAL</h2>
+                <p className="text-lg font-semibold">${data?.price}</p>
               </div>
 
               <div className="flex items-center justify-between mb-8 border-b-2 p-4">
-                <div className="flex items-center gap-5">
-                  <h2 className="text-lg font-semibold">SHIPPING</h2>
-                </div>
-                <div>
-                  <p className="text-lg font-semibold">FREE</p>
-                </div>
+                <h2 className="text-lg font-semibold">SHIPPING</h2>
+                <p className="text-lg font-semibold">FREE</p>
               </div>
+
               <div className="flex items-center justify-between">
                 <button
                   type="submit"
