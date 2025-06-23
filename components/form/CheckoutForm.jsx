@@ -4,11 +4,13 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import React, { useRef, useState } from "react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const CheckoutForm = ({ data }) => {
   const { data: session } = useSession();
   const [loading, setLoading] = useState(false);
   const formRef = useRef();
+  const router = useRouter();
 
   const handleBookService = async (e) => {
     e.preventDefault();
@@ -49,6 +51,7 @@ const CheckoutForm = ({ data }) => {
       if (res.ok && postedResponse.insertedId) {
         toast.success("Order Successfully Done");
         formRef.current.reset();
+        router.push("/allProducts");
       } else {
         throw new Error(postedResponse.message || "Something went wrong");
       }

@@ -1,3 +1,9 @@
+import  OrdersDisplay from "../../components/OrdersDisplay";
+
 export default function MyBookings() {
-  return <div>MyBookings</div>;
+  return (
+    <div>
+      <OrdersDisplay />
+    </div>
+  );
 }

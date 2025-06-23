@@ -75,6 +75,9 @@ export default function Navbar() {
               <li>
                 <Active href="/contact">Contact</Active>
               </li>
+              <li>
+                <Active href="/myOrders">My Orders</Active>
+              </li>
             </ul>
           </div>
 
